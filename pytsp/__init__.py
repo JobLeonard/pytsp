@@ -145,6 +145,9 @@ def run(tsp_path, start=None, solver="concorde"):
 
         metadata = "".join(meta)
 
+    else:
+        raise ValueError("Invalid solver")
+
     if start:
         # rotate to the beginning of the route
         while raw[0] != start:
