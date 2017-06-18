@@ -10,7 +10,8 @@ DIMENSION: {n_cities}
 EDGE_WEIGHT_TYPE: EXPLICIT
 EDGE_WEIGHT_FORMAT: LOWER_DIAG_ROW
 EDGE_WEIGHT_SECTION
-{matrix_s}EOF"""
+{matrix_s}EOF
+"""
 
 class TSPSolverNotFound(IOError):
     pass
