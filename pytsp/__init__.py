@@ -106,6 +106,7 @@ def run(tsp_path, start=None, solver="concorde"):
 
         if type(output) is not str: output = output.decode()
         metadata = output.strip().split("\n")
+        solution = None
         for line in metadata:
             if line.startswith("Optimal Solution:"):
                 solution = float(line.split(":")[1])
