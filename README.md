@@ -26,7 +26,7 @@ This matrix can be generated using e.g. the Mapbox [Distance API](https://github
 
 To find the optimal route using pyconcorde, import the necessary modules
 
-    from pyconcorde import atsp_tsp, run_concorde, dumps_matrix
+    from pytsp import atsp_tsp, run, dumps_matrix
 
 Then we must convert the asymetrical TSP to a symetrical problem. The asymetrical case is not well researched and is not supported by Concorde. Furthermore, in practical application, traffic and road conditions will have more impact than asymmetry of travel times in most cases.
 
@@ -40,11 +40,11 @@ Next, write temporary file in the `tsp` format
 
 Finally, run the optimization with concorde
 
-    tour = run(outf, start=10, solver="concorde")
+    tour = run(outf, start=0, solver="concorde")
 
 or with LKH
 
-    tour = run(outf, start=10, solver="LKH")
+    tour = run(outf, start=0, solver="LKH")
 
 The tour dictionary contains these keys:
 
