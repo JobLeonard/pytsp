@@ -85,6 +85,7 @@ TOUR_FILE =  {}
 
 def run(tsp_path, start=None, solver="concorde"):
     bdir = os.path.dirname(tsp_path)
+    old_workdir = os.getcwd()
     os.chdir(bdir)
 
     if solver.lower() == 'concorde':
@@ -149,6 +150,7 @@ def run(tsp_path, start=None, solver="concorde"):
         while raw[0] != start:
             raw = raw[1:] + raw[:1]
 
+    os.chdir(old_workdir)
     return {'tour': raw,
             'solution': solution,
             'metadata': metadata}
