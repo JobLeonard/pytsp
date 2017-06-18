@@ -103,6 +103,7 @@ def run(tsp_path, start=None, solver="concorde"):
 
         raw = [int(x) for x in sol.split()[1:]]  # first is just n cities
 
+        if type(output) is not str: output = output.decode()
         metadata = output.strip().split("\n")
         for line in metadata:
             if line.startswith("Optimal Solution:"):
